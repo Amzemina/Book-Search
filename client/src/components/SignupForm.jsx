@@ -42,9 +42,6 @@ const [addUser, {error}] = useMutation(ADD_USER);
     }
 
     try {
-      console.log("going to add user")
-
-      // FIXED: had to change {response} => response
       const response = await addUser({
         variables: { ...userFormData }
       });
@@ -53,8 +50,8 @@ const [addUser, {error}] = useMutation(ADD_USER);
         throw new Error('something went wrong!');
       }
 
-      const { token, user } = response.data.addUser;
-      console.log(user);
+      const { token } = response.data.addUser;
+      
       Auth.login(token);
 
     } catch (err) {

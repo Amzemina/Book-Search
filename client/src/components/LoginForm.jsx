@@ -37,8 +37,8 @@ const LoginForm = () => {
 
       // Check if the mutation was successful
       if (data && data.login) {
-        const { token, user } = data.login;
-        console.log(user);
+        const { token } = data.login;
+        
         Auth.login(token);
       } else {
         throw new Error('Something went wrong!');
