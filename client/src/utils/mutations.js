@@ -5,8 +5,18 @@ mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
         token
         user {
-        _id
-        username
+            _id
+            username
+            email
+            bookCount
+            savedBooks {
+                authors
+                bookId
+                description
+                image
+                link
+                title
+            }
         }
     }
 }
@@ -17,8 +27,18 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
         token
         user {
-        _id
-        username
+            _id
+            username
+            email
+            bookCount
+            savedBooks {
+                authors
+                bookId
+                description
+                image
+                link
+                title
+            }
         }
     }
 }
@@ -61,4 +81,3 @@ mutation removeBook($bookId: ID!) {
     }
 }
 `;
-

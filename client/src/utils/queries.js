@@ -6,7 +6,6 @@ query me {
         _id
         username
         email
-        bookCount
         savedBooks {
         bookId
         authors
